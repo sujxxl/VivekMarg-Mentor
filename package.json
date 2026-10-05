@@ -1,0 +1,29 @@
+{
+  "name": "vivekmarg-mentor",
+  "version": "1.0.0",
+  "description": "A Voice-First, Socratic AI Mentor & Inner Growth Compass Grounded in the Philosophy of Swami Vivekananda",
+  "main": "www/app.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node test_web.js && node test_ui.js && python test_corpus.py",
+    "test:corpus": "python test_corpus.py",
+    "test:retrieval": "node test_web.js",
+    "test:ui": "node test_ui.js",
+    "build:apk": "powershell -ExecutionPolicy Bypass -File ./android/build_apk.ps1"
+  },
+  "keywords": [
+    "vivekananda",
+    "socratic",
+    "mentor",
+    "karma-yoga",
+    "voice-first",
+    "offline-rag"
+  ],
+  "author": "VivekMarg Team",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "jsdom": "^24.0.0"
+  }
+}
