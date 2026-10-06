@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VivekMarg Mentor: A voice-first, Socratic AI companion and inner growth compass grounded in the authentic public-domain philosophy of Swami Vivekananda.">
+  <meta name="keywords" content="Swami Vivekananda, Socratic Mentorship, Karma Yoga, Raja Yoga, Mindfulness, Voice AI, Indian Philosophy, Character Building">
+  <meta name="theme-color" content="#faf6ef">
+  <title>VivekMarg Mentor (विवेकमार्ग मेंटर) — Socratic AI & Inner Growth Compass</title>
+
+  <!-- Google Fonts for Classical Indian & Modern Sans Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Noto+Sans:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!-- Top Navigation & Watermark Bar -->
+  <header class="top-bar" role="banner">
+    <div class="brand-section">
+      <div class="brand-logo" aria-label="VivekMarg Emblem">ॐ</div>
+      <div>
+        <h1 class="brand-title">VivekMarg Mentor</h1>
+        <span class="brand-sub">विवेकमार्ग मेंटर • Socratic Inner Compass</span>
+      </div>
+    </div>
+
+    <div class="top-bar-actions">
+      <!-- Watermark Shield Toggle -->
+      <button class="action-btn shield-btn" id="shield-toggle-btn" title="Toggle Authenticity Watermark" aria-label="Toggle Authenticity Watermark">
+        <span class="shield-icon">🛡️</span>
+        <span class="shield-label">Watermark</span>
+      </button>
+
+      <!-- 32-Locale Language Selector -->
+      <div class="lang-select-wrap">
+        <select id="lang-select" aria-label="Select Language and Dialect">
+          <optgroup label="Scheduled Indian Languages">
+            <option value="en-IN" selected>English (India)</option>
+            <option value="hi-IN">Hindi (हिन्दी)</option>
+            <option value="bn-IN">Bengali (বাংলা)</option>
+            <option value="te-IN">Telugu (తెలుగు)</option>
+            <option value="mr-IN">Marathi (मराठी)</option>
+            <option value="ta-IN">Tamil (தமிழ்)</option>
+            <option value="ur-IN">Urdu (اردو)</option>
+            <option value="gu-IN">Gujarati (ગુજરાતી)</option>
+            <option value="kn-IN">Kannada (ಕನ್ನಡ)</option>
+            <option value="or-IN">Odia (ଓଡ଼ିଆ)</option>
+            <option value="ml-IN">Malayalam (മലയാളം)</option>
+            <option value="pa-IN">Punjabi (ਪੰਜਾਬੀ)</option>
+            <option value="as-IN">Assamese (অসমীয়া)</option>
+            <option value="ma-IN">Maithili (मैथिली)</option>
+            <option value="sa-IN">Sanskrit (संस्कृतम्)</option>
+            <option value="ks-IN">Kashmiri (कॉशुर)</option>
+            <option value="ne-NP">Nepali (नेपाली)</option>
+            <option value="kok-IN">Konkani (कोंकणी)</option>
+            <option value="sd-IN">Sindhi (سنڌي)</option>
+            <option value="doi-IN">Dogri (डोगरी)</option>
+            <option value="mni-IN">Manipuri (মৈতৈলোন্)</option>
+            <option value="brx-IN">Bodo (बड़ो)</option>
+          </optgroup>
+          <optgroup label="Tribal & Regional Locales">
+            <option value="tcy-IN">Tulu (ತುಳು)</option>
+            <option value="kxu-IN">Kui (କୁଇ)</option>
+            <option value="sat-IN">Santali (ᱥᱟᱱᱛᱟᱲᱤ)</option>
+            <option value="gon-IN">Gondi (गोण्डी)</option>
+            <option value="bhb-IN">Bhili (भीली)</option>
+            <option value="hoc-IN">Ho (हो)</option>
+            <option value="kru-IN">Kurukh (कुड़ुख़)</option>
+            <option value="kyw-IN">Kurmali (कुड़मालि)</option>
+            <option value="lus-IN">Mizo (Mizo ṭawng)</option>
+            <option value="kha-IN">Khasi (Ka Ktien Khasi)</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <!-- Growth Vault Button -->
+      <button class="action-btn" id="growth-btn" aria-label="Open Universal Growth Compass">
+        <span>🌱</span>
+        <span id="user-greeting-label">Compass</span>
+      </button>
+
+      <!-- Account / PIN Vault Button -->
+      <button class="action-btn" id="vault-btn" aria-label="Open Private Identity Vault">
+        <span id="vault-lock-icon">🔒</span>
+        <span id="vault-status-label">Vault</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Fallback Dialect Notification Banner -->
+  <div id="dialect-banner" class="dialect-banner hidden" role="alert">
+    <span>ℹ️</span>
+    <span id="dialect-banner-text">Audio voiced via regional fallback.</span>
+  </div>
+
+  <!-- Main Application Container -->
+  <main class="app-container">
+    <div class="dual-stream-canvas">
+      
+      <!-- LEFT PANEL: SOURCE ANCHOR PANEL (Verbatim Corpus) -->
+      <section class="source-anchor-panel" id="source-anchor-panel" aria-label="Verbatim Historical Passage">
+        <div class="panel-header">
+          <h2 class="panel-title">
+            <span>📜</span> Source Anchor
+          </h2>
+          <span class="badge-source" id="source-verbatim-badge">Verbatim Source</span>
+        </div>
+
+        <div class="source-meta-bar" id="source-meta-bar">
+          <span class="source-meta-item"><strong>Work:</strong> <span id="meta-section">Karma-Yoga</span></span>
+          <span class="source-meta-item"><strong>Chapter:</strong> <span id="meta-chapter">III</span></span>
+          <span class="source-meta-item"><strong>Citation:</strong> <span id="meta-citation">CW Vol. 1, p. 51</span></span>
+        </div>
+
+        <article class="source-quote-box verbatim-source" id="source-quote-box">
+          <p id="source-quote-text">
+            To work you have the right, but not to the fruits thereof. The worker must not care for the results of his work. When we are performing any action, let us not think of results, praise, or reward. Let us put our whole heart and soul into the work, and the results will take care of themselves.
+          </p>
+        </article>
+
+        <div class="source-actions">
+          <button class="action-btn" id="speak-quote-btn" aria-label="Read Verbatim Source in Measured English">
+            <span>🔊</span> Listen (0.80x)
+          </button>
+        </div>
+      </section>
+
+      <!-- RIGHT PANEL: SOCRATIC MIRROR STREAM -->
+      <section class="socratic-stream-panel" id="socratic-stream-panel" aria-label="Socratic Inquiry Stream">
+        
+        <!-- Stage Status Badge -->
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div class="stage-badge" id="current-stage-badge">Stage 1: Definition & Clarity</div>
+          <button class="action-btn" id="new-reflection-btn" style="font-size: 0.75rem; padding: 3px 8px;">
+            ↺ Reset Session
+          </button>
+        </div>
+
+        <!-- Conversational Stream -->
+        <div class="socratic-chat-history" id="socratic-chat-history" role="log" aria-live="polite">
+          <!-- Dynamic Message Cards populated by app.js -->
+        </div>
+
+        <!-- Socratic Input Form -->
+        <div class="socratic-input-area">
+          <form id="socratic-form" class="input-row" onsubmit="return false;">
+            <input 
+              type="text" 
+              class="socratic-input" 
+              id="socratic-input" 
+              placeholder="Speak or type your reflection here..." 
+              autocomplete="off"
+              aria-label="Reflection Input"
+            />
+            <button type="button" class="btn-voice" id="voice-mic-btn" aria-label="Start Voice Dictation">
+              <span id="mic-icon">🎤</span>
+            </button>
+            <button type="submit" class="btn-primary" id="submit-step-btn" aria-label="Submit Answer">
+              <span>Reflect</span>
+            </button>
+          </form>
+
+          <div class="accessibility-press-to-hear">
+            <span>Press to hear current prompt:</span>
+            <button class="press-to-hear-btn" id="press-to-hear-btn" aria-label="Hear Current Prompt Aloud">
+              🔊 Hear Guidance
+            </button>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- UNIVERSAL IDENTITY & PRIVATE VAULT MODAL -->
+  <div id="vault-modal" class="modal-overlay hidden" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2 class="modal-title">Private Local Vault</h2>
+        <button class="icon-btn" id="close-vault-modal">✕</button>
+      </div>
+      
+      <div id="vault-auth-view">
+        <p style="font-size: 0.9rem; color: var(--ink-soft); margin-bottom: var(--space-md);">
+          Your reflections and growth vectors are encrypted on this device using salted SHA-256 digests. Zero telemetry or server transmission.
+        </p>
+
+        <form id="vault-profile-form">
+          <div class="form-group">
+            <label for="profile-name">Your Name</label>
+            <input type="text" id="profile-name" class="form-input" placeholder="e.g. Asha Kumari" required />
+          </div>
+
+          <div class="form-group" style="margin-top: 10px;">
+            <label for="profile-salutation">Salutation</label>
+            <select id="profile-salutation" class="form-select">
+              <option value="Sister">Sister</option>
+              <option value="Brother">Brother</option>
+              <option value="Friend" selected>Friend</option>
+              <option value="Seeker">Seeker</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-top: 10px;">
+            <label for="profile-pin">4-Digit Numeric Passcode (PIN)</label>
+            <input type="password" id="profile-pin" class="form-input" maxlength="4" pattern="[0-9]{4}" placeholder="••••" required />
+          </div>
+
+          <div style="display: flex; gap: var(--space-sm); margin-top: var(--space-lg);">
+            <button type="submit" class="btn-primary" style="flex: 1;">Save Profile & Unlock</button>
+            <button type="button" class="action-btn" id="guest-mode-btn">Guest Mode</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- UNIVERSAL GROWTH COMPASS & SANKALPA LEDGER MODAL -->
+  <div id="growth-modal" class="modal-overlay hidden" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2 class="modal-title">Universal Growth Compass</h2>
+        <button class="icon-btn" id="close-growth-modal">✕</button>
+      </div>
+
+      <div class="growth-grid">
+        <div class="growth-card">
+          <div class="growth-val" id="vector-steadiness">10</div>
+          <div class="growth-label">Steadiness (Ekagrata)</div>
+        </div>
+        <div class="growth-card">
+          <div class="growth-val" id="vector-resilience">10</div>
+          <div class="growth-label">Resilience (Shraddha)</div>
+        </div>
+        <div class="growth-card">
+          <div class="growth-val" id="vector-followthrough">100%</div>
+          <div class="growth-label">Action Follow-Through</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 1rem; color: var(--ochre-deep); margin-bottom: var(--space-xs);">Longitudinal Sankalpa Ledger</h3>
+      <div class="sankalpa-list" id="sankalpa-ledger-list">
+        <!-- Populated dynamically -->
+      </div>
+
+      <div style="display: flex; justify-content: space-between; margin-top: var(--space-md); border-top: 1px solid var(--paper-3); padding-top: var(--space-sm);">
+        <button class="action-btn" id="export-data-btn">📤 Export Vault JSON</button>
+        <button class="action-btn" id="lock-vault-btn">🔒 Lock Session</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="corpus.js"></script>
+  <script src="corpus_data.js"></script>
+  <script src="account.js"></script>
+  <script src="retrieval.js"></script>
+  <script src="socratic.js"></script>
+  <script src="speech.js"></script>
+  <script src="manifest.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
