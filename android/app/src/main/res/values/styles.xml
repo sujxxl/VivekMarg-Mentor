@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.VivekMarg" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">
+        <item name="android:colorPrimary">#A35A12</item>
+        <item name="android:colorPrimaryDark">#7C430C</item>
+        <item name="android:colorAccent">#2F4858</item>
+        <item name="android:windowBackground">#FAF6EF</item>
+    </style>
+</resources>
